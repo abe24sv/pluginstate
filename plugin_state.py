@@ -1,21 +1,12 @@
 """
 Gathers state of each plugin Endpoints.
 """
-
 import json
 import logging
-import re
 import requests
 import tempfile
-import time
-import urllib
 import re
-from multiprocessing.pool import ThreadPool
 import urllib3
-from math import ceil
-import datetime
-
-import os.path
 
 from ruxit.api.base_plugin import RemoteBasePlugin
 from ruxit.api.exceptions import ConfigException
