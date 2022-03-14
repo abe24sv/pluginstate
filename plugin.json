@@ -1,0 +1,65 @@
+{
+  "name": "custom.remote.python.pluginstate",
+  "version": "1.00",
+  "type": "python",
+  "entity": "CUSTOM_DEVICE",
+  "metricGroup": "tech.Custom_Technology",
+  "processTypeNames": ["PYTHON"],
+  "technologies": ["Plugin State"],
+  "favicon": "https://images-na.ssl-images-amazon.com/images/I/61abis-PINL.png",
+  "source": {
+    "package": "plugin_state",
+    "className": "PluginState",
+    "install_requires": ["requests>=2.6.0"],
+    "activation": "Remote"
+  },
+  "metrics": [],
+  "properties" : [
+    {
+      "key": "metric_id",
+      "type": "String"
+    },
+    {
+      "key": "api_key",
+      "type": "Password"
+    },
+    {
+      "key": "tenant_id",
+      "type": "String"
+    },
+    {
+      "key": "get_pluginid",
+      "type": "String"
+    }
+  ],
+  "configUI": {
+        "displayName": "Plugin State Extension",
+        "properties": [
+          {
+          "key" : "metric_id",
+          "displayName" :  "Name of the Metric",
+          "displayHint": "Name of the metric where it will be identified in the Data Explorer",
+          "displayOrder" : 1
+        },
+          {
+          "key" : "tenant_id",
+          "displayName" :  "Tenant URL",
+          "displayHint": "Complete URL of the tenant where data is retrieved and written to once per hour. Managed: https://{your-domain}/e/{your-environment-id} SaaS: https://{your-environment-id}.live.dynatrace.com",
+          "displayOrder" : 2
+        },
+        {
+          "key" : "api_key",
+          "displayName" :  "API Token",
+          "displayHint": "Used to authenticate the calls. Required permissions: Read configuration, Write configuration, ReadMetrics, WriteMetrics, Ingest metrics and Read Entities",
+          "displayOrder" : 3
+        },
+        {
+          "key" : "get_pluginid",
+          "displayName" :  "Insert the Plugin ID",
+          "displayHint": "",
+          "displayOrder" : 4
+        }
+	  ]
+    },
+    "ui": {}
+}
